@@ -1,16 +1,11 @@
 angular.module('app', ['ui.bootstrap', 'kendo.directives' ]);
 angular.module('app').controller('AppCtrl', function($scope) {
-  $scope.title = "Who is next";
+  $scope.title = "Who Is Next";
   $scope.io = io.connect();
-  $scope.admitted = true;
 
   $scope.addVote = function(name)
   {
-	if($scope.admitted)
-	{
-	   $scope.io.emit('vote', { name: name }) ;
-	   $scope.admitted = false;
-	}
+   $scope.io.emit('vote', { name: name }) ;
   }
   $scope.io.on('voted', function(data) 
   {
