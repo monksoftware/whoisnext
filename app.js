@@ -1,3 +1,5 @@
+var express = require('express.io');
+var path = require('path');
 app = require('express.io')();
 app.http().io();
 
@@ -7,6 +9,8 @@ var votes = {
   gennaro: 0,
   dario: 0
 };
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', function(req, res) {
   res.sendfile(__dirname + '/client.html');
