@@ -1,22 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="app" lang="en">
 <head>
   <meta charset="UTF-8">
   <title></title>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/layout.css" rel="stylesheet">
+
 </head>
-<body>
-  <script src="file.js"></script>
+<body ng-controller="AppCtrl" style="padding-top: 60px">
   <script src="/socket.io/socket.io.js"></script>
-  <script>
-    var io = io.connect();
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">{{ title }}</a>
+        </div>
+      </div>
+    </div>
 
-    window.vote = function(name) {
-      io.emit('vote', { name: name });
-    };
+    <div class="container">
+      <div class="row">
+	   <div class="row-fluid" style="display:inline; width: 100%">
+	        <div class="span2" style="" ng-click="addVote('gennaro')">Gennaro Amendola</div>
+	       	<div class="span2" style="" ng-click="addVote('dario')">Dario Carlomagno</div>
+	       	<div class="span2" style="" ng-click="addVote('loi')">Domenico Loi</div>
+		<div class="span2" style="" ng-click="addVote('cincis')">Gianluca Cincis</div>
+           </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+		<div id="chart"> </div>
+        </div>
+      </div>
+    </div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="vendor/js/angular.js"></script>
+    <script src="http://cdn.kendostatic.com/2013.3.1119/js/kendo.all.min.js"></script>
+    <script src="vendor/js/angular-kendo.js"></script>
 
-    io.on('voted', function(data) {
-      console.log(data);
-    });
-  </script>
+    <script src="app/app.js"></script>
+    <script src="vendor/js/ui-bootstrap-tpls-0.9.0.min.js"></script>
+    <script src="common/resources/script.js"></script>
+
 </body>
 </html>

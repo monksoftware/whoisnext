@@ -1,0 +1,17 @@
+html, body { height: 100%; }
+body {
+  background: url(../images/logo.png) 50% 90% no-repeat;
+}
+.navbar-inverse { background: rgb(254, 80, 79); border-color: rgb(254, 80, 79); }
+.navbar-inverse .navbar-brand { color: #fff; }
+
+.flag {
+  display: block;
+  width: 16px;
+  height: 11px;
+  background:url(../images/flags.png) no-repeat
+}
+
+.flag.flag-en {background-position: -16px 0}
+.flag.flag-it {background-position: 0 -11px}
+.flag.flag-pl {background-position: -16px -11px}

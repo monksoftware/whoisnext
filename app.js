@@ -18,7 +18,7 @@ app.get('/', function(req, res) {
 
 app.io.route('vote', function(req) {
   votes[req.data.name] += 1;
-  req.io.broadcast('voted', votes);
+  app.io.broadcast('voted', votes);
 });
 
 app.listen(3000);
