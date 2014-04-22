@@ -21,4 +21,4 @@ app.io.route('vote', function(req) {
   app.io.broadcast('voted', votes);
 });
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
